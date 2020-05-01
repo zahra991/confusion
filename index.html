@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>    
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>        
@@ -88,7 +88,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a data-toggle="modal" data-target="#reserveTableForm" role="button" class="btn btn-block nav-link btn-warning" 
+                    <a id="reserveButton" role="button" class="btn btn-block nav-link btn-warning" 
                     data-placement="bottom">Reserve Table</a>
                 </div>
             </div>
@@ -145,22 +145,23 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-4 col-md-3 order-sm-last">
-                <h3>Our Lipsmacking Culinary Creations</h3>
-            </div>
-            <div class="col col-sm order-sm-first col-md">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                            src="img/uthappizza.png" alt="Uthappizza">
-                    <div class="media-body">
-                        <h2 class="mt-0">Alberto Somayya</h2>
-                        <h4>Executive Chef</h4>
-                        <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+        
+        <div class="container">
+            <div class="row row-content algn-items-center">
+                <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                    <h3>Our Lipsmacking Culinary Creations</h3>
+                </div>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail aign-self-center"
+                            src="img/uthappizza.png" alt="uthappizza">
+                        <div class="media-body">
+                            <h2 class="md-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
+                            <p class="d-none d-md-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3 order-sm-first">
@@ -338,8 +339,14 @@
                     $('#mycarousel').carousel('cycle');
                     $('#carouselButton').children('span').removeClass('fa-play');
                     $('#carouselButton').children('span').addClass('fa-pause');
-                }         
+                }
             });
+            $('#loginButton').click(function(){
+                $('#loginModal').modal('toggle');
+            });
+            $('#reserveButton').click(function(){
+                $('#reserveTableForm').modal('toggle');
+            })         
         })
     </script>
 
